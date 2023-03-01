@@ -7,7 +7,7 @@ function gobbleNuts() {
     gameData.nuts += gameData.nutsPerClick
     document.getElementById("nutsGobbled").innerHTML = gameData.nuts + " Nuts Gobbled"
 }
-function buyGoldPerClick() {
+function buyNutsPerClick() {
     if (gameData.nuts >= gameData.nutsPerClickCost) {
         gameData.nuts -= gameData.nutsPerClickCost
         gameData.nutsPerClick += 1
