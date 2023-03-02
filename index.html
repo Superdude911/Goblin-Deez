@@ -5,11 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goblin Deez</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p id="nutsGobbled">0 Nuts Gobbled</p>
-    <button onclick="gobbleNuts()">Gobble Deez</button>
+    <p id="nutsGobbled" class="nuts-gobbled">0 Nuts Gobbled</p>
+    <div id="navigateButtons">
+        <button onclick="tab('gobbleNutsMenu')">Go to Goblin Lair</button>
+        <button onclick="tab('shopMenu')">Go to Shop</button>
+    </div>
+    <div id="gobbleNutsMenu">
+         <button onclick="gobbleNuts()">Gobble Deez</button>
+    </div>
+   <div id="shopMenu" style="display:inline-block;">
     <button onclick="buyNutsPerClick()" id="perClickUpgrade">Sloppier Tongue (Currently Level 1) Cost: 10 Nuts </button>
+   </div>
     <script src="main.js" charset="UTF-8" type="text/javascript"></script>
+    <script>
+        function tab(tabName) {
+            var goblinLairTab = document.getElementById("gobbleNutsMenu");
+            var shopTab = document.getElementById("shopMenu");
+
+            if (tabName === "gobbleNutsMenu") {
+                goblinLairTab.style.display = "inline-block";
+                shopTab.style.display = "none";
+            } else if (tabName === "shopMenu") {
+                goblinLairTab.style.display = "none";
+                shopTab.style.display = "inline-block";
+            }
+        }
+        window.onload = function() {
+            var goblinLairTab = document.getElementById("gobbleNutsMenu");
+            var shopTab = document.getElementById("shopMenu");
+
+            goblinLairTab.style.display = "inline-block";
+            shopTab.style.display = "none";
+        };
+    </script>
 </body>
 </html>
